@@ -1,0 +1,98 @@
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+
+#sidebar {
+  grid-area: sidebar;
+  overflow-y: scroll;
+}
+
+#content {
+  grid-area: content;
+}
+
+.header {
+  grid-area: header;
+  font-family: Helvetica, sans-serif;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.sideBarItem {
+  max-height: 50px;
+  max-width: 50px;
+  padding: 5px;
+}
+
+.sideBarItem img {
+  max-height: 50px;
+  max-width: 50px;
+}
+
+.colourPalette {
+  grid-area: colourP;
+  display: flex;
+  flex-direction: grid;
+  flex-flow: wrap;
+}
+
+.options {
+  grid-area: options;
+  padding: 15px;
+}
+
+.colourSwatches {
+  position: relative;
+  margin: 0.1em auto;
+  width: 1em;
+  height: 0.86em;
+  border-radius: 1em/0.5em;
+  background: rgb(0, 0, 0);
+  transition: opacity 0.5s;
+}
+.colourSwatches:before,
+.colourSwatches:after {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  background: inherit;
+  content: "";
+}
+.colourSwatches:before {
+  -webkit-transform: rotate(60deg);
+  -ms-transform: rotate(60deg); /*Added for IE9*/
+  transform: rotate(60deg);
+}
+.colourSwatches:after {
+  -webkit-transform: rotate(-60deg);
+  -ms-transform: rotate(-60deg); /*Added for IE9*/
+  transform: rotate(-60deg);
+}
+
+.wrapper {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 70px 230px minmax(500px, 1fr);
+  grid-template-rows: 35px minmax(500px, 1fr) 160px;
+  grid-template-areas:
+    "header header header header"
+    "sidebar content content content"
+    "colourP colourP colourP options";
+  background-color: #fff;
+  color: rgb(235, 219, 219);
+}
+
+.box {
+  background-color: rgb(134, 51, 51);
+  color: #fff;
+  font-size: 150%;
+}
+
+.header {
+  background-color: rgb(212, 42, 42);
+}
